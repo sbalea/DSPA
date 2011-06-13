@@ -40,3 +40,8 @@ object Graph3 {
                      (8, 10, 4),
                      (9, 10, 6))
 }
+
+object Graph4 {
+    val edges = List((1, 2, 5),
+                     (3, 4, 3))
+}

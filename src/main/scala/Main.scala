@@ -13,5 +13,8 @@ object Main {
         
         println("Even more complex graph:")
         println(DSPA.run(Graph3.edges, 1))
+        
+        println("Disconnected graph:")
+        println(DSPA.run(Graph4.edges, 1))
     }
 }

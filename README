@@ -22,8 +22,12 @@ The main algorithm can be found in DSPA.run. This method receives a set of
 data consisting of a list of tuples of format (NodeNameA, NodeNameB, Weight)
 and the name of the start node. An optional parameter indicates if the code
 should consider the graph directed or undirected. Default is undirected.
+Note: the weight of an edge isa positive integer number, with Integer.MAX_VALUE
+being considered "infinity"
+
 The output is a map of NodeName -> (Distance, List(NodeNames)), containing 
-shortest distance as well as shortest path from origin to each node.
+shortest distance as well as shortest path from origin to each node.If there is no 
+path from origin to a node, the algorithm returns NodeName -> (Integer.MAX_VALUE, List())
 
 Internally, the code uses two helper classes:
 Edge: basic immutable encapsulation of a directed edge

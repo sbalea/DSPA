@@ -11,7 +11,8 @@ class DSPAAcceptanceSpec extends Specification { def is =
         "solve simple graphs"                               ! e1 ^
         "solve more complex graphs"                         ! e2 ^
         "solve directed graphs as well"                     ! e3 ^
-        "solve even more complex graphs"                    ! e4
+        "solve even more complex graphs"                    ! e4 ^
+        "handle disconnected graphs"                        ! e5
         
     def e1 = {
         DSPA.run(Graph1.edges, "foo") must havePairs("foo" -> (0, List("foo")),
@@ -48,5 +49,12 @@ class DSPAAcceptanceSpec extends Specification { def is =
                                                  8 -> (13, List(1, 3, 5, 8)),
                                                  9 -> (15, List(1, 3, 7, 9)),
                                                  10 -> (17, List(1, 3, 5, 8, 10)))
+    }
+    
+    def e5 = {
+        DSPA.run(Graph4.edges, 1) must havePairs(1 -> (0, List(1)),
+                                                 2 -> (5, List(1, 2)),
+                                                 3 -> (Integer.MAX_VALUE, List()),
+                                                 4 -> (Integer.MAX_VALUE, List()))
     }
 }

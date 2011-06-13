@@ -62,6 +62,7 @@ object DSPA {
         // Helper function that retrieves the shortest path to a node
         def path(node:Node, acc:List[Any] = List()):List[Any] = node match {
             case `startNode` => startNode.name :: acc
+            case null        => List()
             case _           => path(node.previous, node.name :: acc)
         }
         
