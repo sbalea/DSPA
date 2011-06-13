@@ -1,6 +1,7 @@
 import sbt._
+import reaktor.scct.ScctProject
 
-class DSPAProject(info:ProjectInfo) extends DefaultProject(info) {
+class DSPAProject(info:ProjectInfo) extends DefaultProject(info) with ScctProject {
     val specs2 = "org.specs2" %% "specs2" % "1.3" % "test"
     val scalaz = "org.specs2" %% "specs2-scalaz-core" % "6.0.RC2" % "test"
 
