@@ -13,8 +13,8 @@ Unit and Acceptance tests require Specs2
 Clone the project
 Run sbt in the project directory
 If necessary, run update to get specs2 dependencies
-Do run to solve examples and print results to console
-Do tests to run unit and acceptance tests
+Do "run" to solve examples and print results to console
+Do "test" to run unit and acceptance tests
 
 4. Implementation
 
