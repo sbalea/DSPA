@@ -1,0 +1,35 @@
+1. Introduction
+
+This library implements Dijkstra's Shortest Path Algorithm in Scala.
+
+2. Requirements and dependencies
+
+The project is built using Scala 2.9.0-1.
+The build environment requires SBT 0.7.7
+Unit and Acceptance tests require Specs2 
+
+3. Usage
+
+Clone the project
+Run sbt in the project directory
+If necessary, run update to get specs2 dependencies
+Do run to solve examples and print results to console
+Do tests to run unit and acceptance tests
+
+4. Implementation
+
+The main algorithm can be found in DSPA.run. This method receives a set of
+data consisting of a list of tuples of format (NodeNameA, NodeNameB, Weight)
+and the name of the start node. An optional parameter indicates if the code
+should consider the graph directed or undirected. Default is undirected.
+The output is a map of NodeName -> (Distance, List(NodeNames)), containing 
+shortest distance as well as shortest path from origin to each node.
+
+Internally, the code uses two helper classes:
+Edge: basic immutable encapsulation of a directed edge
+Node: mutable encapsulation of a Node, containing a list of edges to neighboring
+nodes, as well as var members for distance, previous node on shortest path and 
+visited flag.
+
+The graph is represented internally by a map of NodeName -> Node and by the reference
+relationships between nodes and edges.
